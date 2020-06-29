@@ -43,7 +43,7 @@ export class AuthService {
         });
         this.SetUserData(result.user);
       }).catch((error) => {
-        this.toastr.error(error.message,'Error:',{timeOut: 5000});
+        window.alert(error.message)
       })
   }
 
@@ -56,7 +56,7 @@ export class AuthService {
         this.SendVerificationMail();
         this.SetUserData(result.user);
       }).catch((error) => {
-        this.toastr.error(error.message,'Error:',{timeOut: 5000});
+        window.alert(error.message)
       })
   }
 
@@ -74,7 +74,7 @@ export class AuthService {
     .then(() => {
       this.toastr.success('Password reset email sent, check your inbox.','Please Find:',{timeOut: 6000});
       }).catch((error) => {
-      this.toastr.error(error.message,'Error:',{timeOut: 5000});
+      window.alert(error.message)
     })
   }
 
