@@ -1,0 +1,52 @@
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+          <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+              <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+                <img class="brand-logo" src="assets/images/Lantronix.png" alt="positronX.io Logo">
+              </a>
+              <div class="navbar-brand col-sm-3 col-md-2 mr-0">
+                <p class = "logout_icon" (click)="authService.SignOut()">
+                    <i class="fas fa-sign-out-alt">LogOut</i>
+                </p>
+                </div>
+            </nav>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+       
+      </div>
+    </div>
+    <div class="row user_list">
+      <div class="col-sm-12">
+          <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item breadcrumb-item-home"><a (click)="getDashboardPage()">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Users List</li>
+              </ol>
+            </nav>
+          <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Emp ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Role</th>
+                  <th scope="col">Project Code</th>
+                </tr>
+              </thead>
+              <tbody class="user_body" *ngFor="let user of userData">
+                <tr>
+                  <th scope="row">{{user.id}}</th>
+                  <td>{{user.Name}}</td>
+                  <td>{{user.Role}}</td>
+                  <td>{{user.Project_code}}</td>
+                </tr>
+                
+              </tbody>
+            </table>
+           
+      </div>
+    </div>
+  </div>

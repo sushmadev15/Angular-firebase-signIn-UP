@@ -1,0 +1,36 @@
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+      <div class="user_card">
+          <div class="d-flex justify-content-center">
+              <div class="brand_logo_container">
+                  <img src="../assets/images/orange-clock-and-white-letter-l.png" class="brand_logo" alt="Logo">
+              </div>
+            </div>
+
+  <div class="authBlock">
+    <h3 class="thank_registering">Thank You for Registering</h3>
+
+    <div class="formGroup" *ngIf="authService.userData as user">
+      <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+      <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+    </div>
+
+    <!-- Calling SendVerificationMail() method using authService Api -->
+    <div class="formGroup">
+      <button type="button" class="btn btnPrimary resend_mail_btn" (click)="authService.SendVerificationMail()">
+        <i class="fas fa-redo-alt"></i>
+        Resend Verification Email
+      </button>
+    </div>
+    <div class="formGroup">
+        <div class="redirectToLogin">
+            <span class="redirect_span_links">Go back to?<span class="redirect" routerLink="/sign-in"> Sign in</span></span>
+          </div>
+      
+    </div>
+
+  </div>
+</div>
+ 
+</div>
+</div>
